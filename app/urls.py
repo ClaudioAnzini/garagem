@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
+from core.views.cor import CorViewSet
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -13,6 +14,7 @@ router = DefaultRouter()
 
 router.register(r'usuarios', UserViewSet, basename='usuarios')
 router.register(r'acessorios', AcessorioViewSet, basename='acessorios')
+router.register(r'cores', CorViewSet, basename='cores')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
